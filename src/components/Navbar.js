@@ -101,15 +101,42 @@ class Navbar extends Component {
     }
   }
 
+  scrollTo = (id) => {
+    const element = document.getElementById(id);
+    element.scrollIntoView({
+      behavior: 'smooth',
+    });
+    // TODO make sure to close side panel when scrolling away
+  }
+
   render() {
     const { classes } = this.props;
 
     let rightContent =
       <div className={classes.navRightItems}>
-        <button className={classes.navButton}>About</button>
-        <button className={classes.navButton}>Mission</button>
-        <button className={classes.navButton}>Roadmap</button>
-        <button className={classes.navMintButton}>Mint</button>
+        <button
+          className={classes.navButton}
+          onClick={() => this.scrollTo('about')}>
+          About
+        </button>
+
+        <button
+          className={classes.navButton}
+          onClick={() => this.scrollTo('mission')}>
+          Mission
+        </button>
+
+        <button
+          className={classes.navButton}
+          onClick={() => this.scrollTo('roadmap')}>
+          Roadmap
+        </button>
+
+        <button
+          className={classes.navMintButton}
+          onClick={() => this.scrollTo('mint')}>
+          Mint
+        </button>
       </div>
 
     // display hambuger if screen is small

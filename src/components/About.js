@@ -36,7 +36,7 @@ class About extends Component {
   render() {
     const { classes } = this.props;
     return (
-      <div className={classes.about}>
+      <div className={classes.about} id='about'>
         <h1 className={classes.aboutTitle}>
           About
         </h1>
