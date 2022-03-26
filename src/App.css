@@ -17,6 +17,19 @@
     --font-color: rgb(24, 33, 109);
 }
 
+a {
+  color: var(--font-color);
+  font-family: FuturaPTLight;
+  font-size: 20px;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out 0s;
+}
+
+a:hover {
+  color: orange;
+  text-decoration: wavy underline;
+}
+
 p {
   margin-top: 0px;
   margin-bottom: 0px;

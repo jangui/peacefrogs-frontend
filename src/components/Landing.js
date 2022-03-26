@@ -3,7 +3,7 @@ import { withStyles } from '@material-ui/core';
 import Page from './Page';
 import Intro from './Intro';
 import About from './About';
-import Mission from './Mission';
+import Dao from './Dao';
 import Roadmap from './Roadmap';
 import Mint from './Mint';
 import Socials from './Socials';
@@ -24,7 +24,7 @@ class Landing extends Component {
       <div className={classes.mainColumn}>
         <Intro />
         <About />
-        <Mission />
+        <Dao />
         <Roadmap />
         <Mint />
         <Socials />

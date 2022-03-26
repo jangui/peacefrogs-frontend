@@ -9,17 +9,13 @@ const styles = theme => ({
     'margin-top': '100px',
     'margin-bottom': '200px',
   },
-  introTitle: {
+  introImage: {
     'margin-bottom': '5px',
-    'width': '750px',
-    'height': '200px',
-    'font-family': '"Motiva Sans Bold", serif bold',
-    'font-size': '4.0rem',
-    'color': 'rgb(24, 33, 109)',
-    'font-weight': '700',
+    'width': 'clamp(100px, 90%, 1000px)',
+    'height': 'auto',
   },
   introText: {
-    'width': 'clamp(400px, 70%, 800px)',
+    'width': 'clamp(100px, 80%, 600px)',
     'text-align': 'center',
   },
 });
@@ -30,7 +26,7 @@ class Intro extends Component {
     return (
       <div className={classes.intro}>
         <img
-          className={classes.introTitle}
+          className={classes.introImage}
           src={process.env.PUBLIC_URL + '/img/title.jpg'}
           alt="Peace Frogs"
         />
