@@ -5,30 +5,22 @@ import Team from './Team';
 const styles = theme => ({
   about: {
     'display': 'flex',
-    'flex-direction': 'column',
     'align-items': 'center',
+    'justify-content': 'center',
     'margin-bottom': '300px',
   },
-  aboutTitle: {
-    'font-family': '"Motiva Sans Bold", serif bold',
-    'font-size': '3.0rem',
-    'color': 'rgb(24, 33, 109)',
-    'font-weight': '700',
-  },
-  aboutBanner: {
-    'height': 'clamp(50px, 200px, 200px)',
-    'width':  'clamp(175px, 700px, 700px)',
-  },
-  aboutTextContainer: {
-    'width': 'clamp(50px, 650px, 700px)',
-    'justify-content': 'flex-start',
+  aboutLeft: {
     'display': 'flex',
+    'flex-direction': 'column',
+    'align-items': 'center',
+    'text-align': 'center',
+    'width': '325px',
+
   },
-  aboutText: {
-    'font-family': '"Motiva Sans Bold", serif light',
-    'font-size': '1.1rem',
-    'color': 'rgb(24, 33, 109)',
-    'font-weight': '400',
+  aboutImage: {
+    'margin-top': '60px',
+    'height': '300px',
+    'width': '475px',
   },
 });
 
@@ -37,22 +29,24 @@ class About extends Component {
     const { classes } = this.props;
     return (
       <div className={classes.about} id='about'>
-        <h1 className={classes.aboutTitle}>
-          About
-        </h1>
-        <img
-          className={classes.aboutBanner}
-          src={process.env.PUBLIC_URL + '/img/aboutBanner.jpg'}
-          alt="About Banner"
-        />
-        <div className={classes.aboutTextContainer}>
-          <div className={classes.aboutText}>
-            <p>• 10k hand draw unique  ...... </p>
-            <p>• 80% of proceeds donated ...... </p>
-            <p>• Each frog = DAO membership ...... </p>
-          </div>
+        <div className={classes.aboutLeft}>
+            <h1> About </h1>
+            <p> The mission of this project is to create a large-scale fundraiser to
+                    <a href="https://mobile.twitter.com/search?q=%23HelpUkrain">#HelpUkraine</a>.
+            </p>
+
+            <p> We believe that introducing fund-raising efforts into the NFT ecosystem will challenge the meaning of an NFT and serve as a precedent project for future fund-raising endeavors. </p>
+
+            <p> Owning a Peace Frog will also grant you membership to the Peace DAO, philanthropic organization that will organize future fund-raiser projects. </p>
+
         </div>
-        <Team />
+        <div>
+            <img
+              className={classes.aboutImage}
+              src={process.env.PUBLIC_URL + '/img/about.png'}
+              alt="About Banner"
+            />
+        </div>
       </div>
     );
   }

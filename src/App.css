@@ -3,3 +3,33 @@
   height: 100%;
 }
 
+@font-face {
+  font-family: FuturaPTMedium;
+  src: local('FuturaPTMedium'), url(./fonts/FuturaPTMedium.otf) format('opentype');
+}
+
+@font-face {
+  font-family: FuturaPTLight;
+  src: local('FuturaPTLight'), url(./fonts/FuturaPTLight.otf) format('opentype');
+}
+
+:root {
+    --font-color: rgb(24, 33, 109);
+}
+
+p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: var(--font-color);
+  font-family: FuturaPTLight;
+  font-size: 20px;
+}
+
+h1 {
+  color: var(--font-color);
+  font-family: FuturaPTMedium;
+  font-size: 40px;
+  letter-spacing: 4px;
+  font-weight: 500;
+  margin-bottom: 0px;
+}
