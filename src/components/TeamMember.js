@@ -11,21 +11,21 @@ const styles = theme => ({
     'margin-top': '10px',
   },
   teamMember: {
-    'margin': '20px 50px',
+    'margin': '20px 0px',
     'display': 'flex',
     'flex-direction': 'column',
     'flex-wrap': 'wrap',
+    'align-items': 'center',
+    'text-align': 'center',
   },
   memberImage: {
-    'height': '150px',
-    'width': '150px',
+    'height': 'auto',
+    'width': 'clamp(250px, 30vw, 300px)',
+    //'width': '300px',
   },
   memberDescription: {
-    'width': '150px',
-    'font-family': '"Motiva Sans", serif light',
-    'font-size': '0.6rem',
-    'color': 'rgb(24, 33, 109)',
-    'font-weight': '300',
+    //'width': 'clamp(200px, 80%, 600px)',
+    'width': '250px',
   },
 });
 
@@ -34,17 +34,19 @@ class TeamMember extends Component {
     const { classes } = this.props;
     return (
       <div className={classes.teamMember}>
-        <h1 className={classes.memberName}>
-          {this.props.name}
-        </h1>
         <img
           className={classes.memberImage}
           src={`${process.env.PUBLIC_URL}${this.props.img}`}
           alt={`${this.props.name}'s icon`}
         />
-        <p className={classes.memberDescription}>
-          {this.props.description}
-        </p>
+        <h1 className={classes.memberName}>
+          {this.props.name}
+        </h1>
+        <div className={classes.memberDescription}>
+          <p>
+            {this.props.description}
+          </p>
+        </div>
       </div>
     );
   }

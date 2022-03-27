@@ -4,25 +4,23 @@ import { withStyles } from '@material-ui/core';
 const styles = theme => ({
   dao: {
     'display': 'flex',
-    'margin-bottom': '300px',
-    'width': 'clamp(300px, 800px, 800px)',
+    'align-items': 'center',
     'justify-content': 'center',
+    'margin-bottom': '300px',
     'flex-wrap': 'wrap',
+    'width': 'clamp(100px, 80%, 1000px)',
   },
-  daoLeft: {
+  daoRight: {
     'display': 'flex',
-    'flex-grow': '0',
-    'flex-shrink': '1',
     'flex-direction': 'column',
     'align-items': 'center',
     'text-align': 'center',
-    'width': '70%',
+    'width': 'clamp(300px, 50%, 350px)',
   },
   daoImage: {
-    'height': '300px',
-    'flex-grow': '1',
-    'width': '300px',
-    'padding': '40px 20px',
+    'height': 'auto',
+    'width': 'clamp(370px, 50%, 650px)',
+    'margin-bottom': '0px',
   },
 });
 
@@ -31,14 +29,12 @@ class Dao extends Component {
     const { classes } = this.props;
     return (
       <div className={classes.dao} id='dao'>
-        <div>
-          <img
-            className={classes.daoImage}
-            src={`${process.env.PUBLIC_URL}/img/peaceDAO.png`}
-            alt={'Dao Icon'}
-          />
-        </div>
-        <div className={classes.daoLeft}>
+        <img
+          className={classes.daoImage}
+          src={`${process.env.PUBLIC_URL}/img/peaceDAO.png`}
+          alt={'Dao Icon'}
+        />
+        <div className={classes.daoRight}>
           <h1> Peace DAO </h1>
            <p>
                 Peace DAO is on track to be the first philanthropic DAO that utilizes NFT artwork to help make the world a better place. It will create a community of like-minded individuals that will collaborate to conduct future fundraising projects.

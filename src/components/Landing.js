@@ -4,6 +4,7 @@ import Page from './Page';
 import Intro from './Intro';
 import About from './About';
 import Dao from './Dao';
+import Team from './Team';
 import Roadmap from './Roadmap';
 import Mint from './Mint';
 import Socials from './Socials';
@@ -25,8 +26,8 @@ class Landing extends Component {
         <Intro />
         <About />
         <Dao />
+        <Team />
         <Roadmap />
-        <Mint />
         <Socials />
       </div>
 

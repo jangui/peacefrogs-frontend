@@ -16,20 +16,24 @@ const styles = theme => ({
   },
 
   logoStyle: {
-    'width': "120px",
-    'height': "70px",
+    'margin-top': '5px',
+    'width': 'clamp(40px, 10vw, 70px)',
+    'height': 'auto',
   },
 
   navLeft: {
     'display:': 'flex',
     'align-items': 'center',
-    'margin': '0px 35px',
+    'margin': '5px 35px 0px clamp(5px, 2vw, 40px)',
+  },
+  navSpacer: {
+    'width': 'clamp(200px, 60vw, 1000px)'
   },
 
   navRight: {
     'display': 'flex',
     'justify-content': 'right',
-    'flex-grow': '2',
+    //'flex-grow': '2',
   },
 
   navRightItems: {
@@ -122,8 +126,8 @@ class Navbar extends Component {
 
         <button
           className={classes.navButton}
-          onClick={() => this.scrollTo('mission')}>
-          Mission
+          onClick={() => this.scrollTo('dao')}>
+          DAO
         </button>
 
         <button
@@ -161,10 +165,11 @@ class Navbar extends Component {
           <div className={classes.navLeft}>
             <img
               className={classes.logoStyle}
-              src={process.env.PUBLIC_URL + '/img/logo.png'}
+              src={process.env.PUBLIC_URL + '/img/hand.jpg'}
               alt="Logo"
             />
           </div>
+          <div className={classes.navSpacer}></div>
           <div className={classes.navRight}>
             {rightContent}
           </div>

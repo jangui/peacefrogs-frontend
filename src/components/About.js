@@ -8,7 +8,7 @@ const styles = theme => ({
     'justify-content': 'center',
     'margin-bottom': '300px',
     'flex-wrap': 'wrap-reverse',
-    'width': 'clamp(100px, 80%, 1000px)',
+    'width': 'clamp(200px, 90%, 1100px)',
   },
   aboutLeft: {
     'display': 'flex',
@@ -20,7 +20,8 @@ const styles = theme => ({
   aboutImage: {
     'margin-top': '60px',
     'height': 'auto',
-    'width': 'clamp(370px, 65%, 650px)',
+    'width': 'clamp(370px, 55%, 650px)',
+    'margin-bottom': '0px',
   },
 });
 

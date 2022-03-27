@@ -7,13 +7,7 @@ const styles = theme => ({
     'flex-direction': 'column',
     'align-items': 'center',
     'margin-bottom': '200px',
-  },
-  socialsTitle: {
-    'font-family': '"Motiva Sans", serif Bold',
-    'font-size': '2.0rem',
-    'color': 'rgb(24, 33, 109)',
-    'font-weight': '700',
-    'margin-bottom': '0px',
+    'text-align': 'center',
   },
   socialsRow: {
     'display': 'flex',
@@ -22,11 +16,11 @@ const styles = theme => ({
     'align-items': 'center',
   },
   iconDiv: {
-    'margin': '50px 60px',
+    'margin': '50px clamp(20px, 2vw, 60px)',
   },
   socialsIcon: {
-    'height': '125px',
-    'width': '125px',
+    'height': 'auto',
+    'width': 'clamp(50px, 10vw, 200px)',
   },
 });
 
@@ -35,8 +29,8 @@ class Socials extends Component {
     const { classes } = this.props;
     return (
       <div className={classes.socials}>
-        <h1 className={classes.socialsTitle}>
-          Follow our socials!
+        <h1>
+          Check out our socials!
         </h1>
         <div className={classes.socialsRow}>
           <div className={classes.iconDiv}>

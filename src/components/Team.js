@@ -6,19 +6,16 @@ const styles = theme => ({
   team: {
     'display': 'flex',
     'flex-direction': 'column',
+    'margin-bottom': '300px',
+    'flex-wrap': 'wrap',
+    'width': 'clamp(200px, 90%, 1100px)',
+    'justify-content': 'center',
     'align-items': 'center',
-  },
-  teamTitle: {
-    'font-family': '"Motiva Sans Bold", serif bold',
-    'font-size': '2.0rem',
-    'color': 'rgb(24, 33, 109)',
-    'font-weight': '700',
-    'margin-top': '30px',
-    'margin-bottom': '0px',
   },
   teamMembers: {
     'display': 'flex',
-    'justify-content': 'space-evenly',
+    'justify-content': 'center',
+    'flex-wrap': 'wrap',
 
   },
 });
@@ -28,8 +25,8 @@ class Team extends Component {
     const { classes } = this.props;
     return (
       <div className={classes.team}>
-        <h1 className={classes.teamTitle}>
-          Team
+        <h1>
+          Meet The Team
         </h1>
         <div className={classes.teamMembers}>
 
