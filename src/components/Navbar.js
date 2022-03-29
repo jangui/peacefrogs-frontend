@@ -12,7 +12,7 @@ const styles = theme => ({
     'display': 'flex',
     'justify-content': 'space-between',
     'align-items': 'center',
-    'margin': '25px 20px',
+    'margin': 'clamp(5px, 1vw, 25px) 20px 0px clamp(15px, 1vw, 20px)',
   },
 
   logoStyle: {
@@ -33,7 +33,6 @@ const styles = theme => ({
   navRight: {
     'display': 'flex',
     'justify-content': 'right',
-    //'flex-grow': '2',
   },
 
   navRightItems: {
@@ -109,6 +108,8 @@ class Navbar extends Component {
     const element = document.getElementById(id);
     element.scrollIntoView({
       behavior: 'smooth',
+      block: 'center',
+      inline: 'center',
     });
     // TODO make sure to close side panel when scrolling away
   }

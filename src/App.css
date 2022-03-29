@@ -47,3 +47,53 @@ h1 {
   margin-bottom: 0px;
   margin-top: 0px;
 }
+
+.introAnimation-appear {
+  opacity: 0;
+}
+.introAnimation-appear-active {
+  opacity: 1;
+  transition: opacity 4000ms;
+}
+.introAnimation-enter {
+  opacity: 0;
+}
+.introAnimation-enter-active {
+  opacity: 1;
+  transition: opacity 1000ms;
+}
+.introAnimation-exit {
+  opacity: 1;
+}
+.introAnimation-exit-active {
+  opacity: 0;
+  transition: opacity 500ms;
+}
+.introAnimation-exit-done {
+  opacity: 0;
+}
+
+.aboutAnimation-appear {
+  transform: translate(150%, 0px);
+}
+.aboutAnimation-appear-active {
+  transform: translate(0px, 0px);
+  transition: transform 4000ms;
+}
+.aboutAnimation-enter {
+  transform: translate(150%, 0px);
+}
+.aboutAnimation-enter-active {
+  transform: translate(0px, 0px);
+  transition: transform 4000ms;
+}
+.aboutAnimation-exit {
+  transform: translate(0px, 0px);
+}
+.aboutAnimation-exit-active {
+  transform: translate(150%, 0px);
+  transition: transform 1000ms;
+}
+.aboutAnimation-exit-done {
+  transform: translate(150%, 0px);
+}

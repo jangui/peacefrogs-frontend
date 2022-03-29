@@ -18,17 +18,65 @@ const styles = theme => ({
 });
 
 class Landing extends Component {
+  state = {
+    visibleIntro: true,
+    visibleAbout: false,
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.toggleVisibilities);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.toggleVisibilities);
+  }
+
+  toggleVisibilities = () => {
+      if (window.scrollY < 400) {
+        this.setState({visibleIntro: true})
+      } else {
+        this.setState({visibleIntro: false})
+      }
+      if (window.scrollY < 800) {
+        this.setState({visibleAbout: true})
+      } else {
+        this.setState({visibleAbout: false})
+      }
+  }
+
+  toggleIntro = (visibility) => {
+    if (visibility === null) { visibility = !this.state.visibleIntro }
+    this.setState({visibleIntro: visibility});
+  }
+  toggleAbout = (visibility) => {
+    if (visibility === null) { visibility = !this.state.visibleIntro }
+    this.setState({visibleAbout: visibility});
+  }
+
   render() {
     const { classes }  = this.props;
 
     let content =
       <div className={classes.mainColumn}>
-        <Intro />
-        <About />
+        <div style={{'margin': '100px'}}></div>
+        <Intro
+          visible={this.state.visibleIntro}
+          toggle={this.toggleIntro}
+        />
+        <div style={{'margin': '150px'}}></div>
+        <About
+          visible={this.state.visibleAbout}
+          toggle={this.toggleAbout}
+        />
+        <div style={{'margin': '150px'}}></div>
         <Dao />
+        <div style={{'margin': '150px'}}></div>
         <Team />
+        <div style={{'margin': '150px'}}></div>
         <Roadmap />
+        <div style={{'margin': '150px'}}></div>
         <Socials />
+        <div style={{'margin': '150px'}}></div>
       </div>
 
     return <Page content={content} />;

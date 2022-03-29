@@ -6,7 +6,6 @@ const styles = theme => ({
     'display': 'flex',
     'flex-direction': 'column',
     'align-items': 'center',
-    'margin-bottom': '200px',
     'text-align': 'center',
   },
   socialsRow: {

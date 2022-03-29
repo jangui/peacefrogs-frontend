@@ -7,7 +7,6 @@ const styles = theme => ({
     'flex-direction': 'column',
     'align-items': 'center',
     'justify-content': 'center',
-    'margin-bottom': '300px',
     'width': 'clamp(200px, 90%, 1100px)',
   },
   roadmapImage: {

@@ -16,7 +16,6 @@ const styles = theme => ({
     'display': 'flex',
     'justify-content': 'center',
     'flex-wrap': 'wrap',
-
   },
 });
 
