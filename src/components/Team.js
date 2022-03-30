@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core';
 import TeamMember from './TeamMember';
+import VisibilitySensor from 'react-visibility-sensor';
 
 const styles = theme => ({
   team: {
     'display': 'flex',
     'flex-direction': 'column',
-    'margin-bottom': '300px',
+    'margin-top': '15vh',
+    'margin-bottom': '15vh',
     'flex-wrap': 'wrap',
     'width': 'clamp(200px, 90%, 1100px)',
     'justify-content': 'center',
     'align-items': 'center',
+
   },
   teamMembers: {
     'display': 'flex',
@@ -20,35 +23,50 @@ const styles = theme => ({
 });
 
 class Team extends Component {
+  state = {
+    visibility: false,
+  }
+
   render() {
     const { classes } = this.props;
     return (
-      <div className={classes.team}>
-        <h1>
-          Meet The Team
-        </h1>
-        <div className={classes.teamMembers}>
+      <VisibilitySensor
+        scrollCheck={true}
+        partialVisibility={true}
+        onChange={(isVisible) => {
+          this.setState({visibility: isVisible})
+        }}
+      >
+        <div className={classes.team} style={{
+            opacity: this.state.visibility ? 1 : 0,
+            transition: 'opacity 1250ms ease-in-out',
+        }}>
+          <h1>
+            Meet The Team
+          </h1>
+          <div className={classes.teamMembers}>
 
-          <TeamMember
-            img='/img/frog.png'
-            name='Alex'
-            description='Team Manager. Entrepaneur. NFT Enthusiast. Balls to the wall.'
-          />
+            <TeamMember
+              img='/img/alex.png'
+              name='Alex'
+              description='Team Manager. Entrepaneur. NFT Enthusiast. Balls to the wall.'
+            />
 
-          <TeamMember
-            img='/img/frog.png'
-            name='Jon'
-            description='Artist. Graphic Design Wizard. Frog lover by day, peace maker by night.'
-          />
+            <TeamMember
+              img='/img/jon.png'
+              name='Jon'
+              description='Artist. Graphic Design Wizard. Frog lover by day, peace maker by night.'
+            />
 
-          <TeamMember
-            img='/img/frog.png'
-            name='Jaime'
-            description='Code Monkey. Tech Overlord.'
-          />
+            <TeamMember
+              img='/img/jaime.png'
+              name='Jaime'
+              description='Code Monkey. Tech Overlord.'
+            />
 
+          </div>
         </div>
-      </div>
+      </VisibilitySensor>
     );
   }
 }

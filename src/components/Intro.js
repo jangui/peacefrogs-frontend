@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core';
-import { CSSTransition } from 'react-transition-group';
+import VisibilitySensor from 'react-visibility-sensor';
 
 const styles = theme => ({
   intro: {
     'display': 'flex',
     'flex-direction': 'column',
     'align-items': 'center',
+    'margin-top': '20vh',
+    'margin-bottom': '20vh',
   },
   introImage: {
     'margin-bottom': '5px',
@@ -20,27 +22,35 @@ const styles = theme => ({
 });
 
 class Intro extends Component {
+  state = {
+    visibility: false
+  }
+
   render() {
     const { classes } = this.props;
     return (
-       <CSSTransition
-        in={this.props.visible}
-        appear={true}
-        timeout={{enter: 700, exit: 500}}
-        classNames="introAnimation"
+      <VisibilitySensor
+        scrollCheck={true}
+        partialVisibility={true}
+        onChange={(isVisible) => {
+          this.setState({visibility: isVisible})
+        }}
       >
-          <div className={classes.intro}>
-            <img
-              className={classes.introImage}
-              src={process.env.PUBLIC_URL + '/img/title.jpg'}
-              alt="Peace Frogs"
-            />
-            <div className={classes.introText}>
-              <p> Peace Frogs NFT is a fundraising collection of 10k digital art frogs. </p>
-              <p> 80% of all proceeds are donated to the Ukrainian Red Cross. </p>
-            </div>
+        <div className={classes.intro} style={{
+            opacity: this.state.visibility ? 1 : 0,
+            transition: 'opacity 1000ms ease-in-out',
+        }}>
+          <img
+            className={classes.introImage}
+            src={process.env.PUBLIC_URL + '/img/title.jpg'}
+            alt="Peace Frogs"
+          />
+          <div className={classes.introText}>
+            <p> Peace Frogs NFT is a fundraising collection of 10k digital art frogs. </p>
+            <p> 80% of all proceeds are donated to the Ukrainian Red Cross. </p>
           </div>
-       </CSSTransition>
+        </div>
+      </VisibilitySensor>
     );
   }
 }

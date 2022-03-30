@@ -1,7 +1,15 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core';
+import VisibilitySensor from 'react-visibility-sensor';
 
 const styles = theme => ({
+  main: {
+    'display': 'flex',
+    'align-items': 'center',
+    'justify-content': 'center',
+    'margin-top': '15vh',
+    'margin-bottom': '15vh',
+  },
   dao: {
     'display': 'flex',
     'align-items': 'center',
@@ -24,26 +32,43 @@ const styles = theme => ({
 });
 
 class Dao extends Component {
+  state = {
+    visibility: false,
+  }
+
   render() {
     const { classes } = this.props;
     return (
-      <div className={classes.dao} id='dao'>
-        <img
-          className={classes.daoImage}
-          src={`${process.env.PUBLIC_URL}/img/peaceDAO.png`}
-          alt={'Dao Icon'}
-        />
-        <div className={classes.daoRight}>
-          <h1> Peace DAO </h1>
-           <p>
-                Peace DAO is on track to be the first philanthropic DAO that utilizes NFT artwork to help make the world a better place. It will create a community of like-minded individuals that will collaborate to conduct future fundraising projects.
-          </p>
-          <div style={{"marginBottom": "10px"}}> </div>
-          <p>
-              Owning a PeaceFrog will grant you a vote on future projects proposed by the Peace DAO. This DAO will have a communal wallet used to fund future projects around the world. To kickstart this community, all the income generated from royalties post-mint will be directed to the DAOs wallet.
-          </p>
+      <VisibilitySensor
+        scrollCheck={true}
+        partialVisibility={true}
+        onChange={(isVisible) => {
+          this.setState({visibility: isVisible})
+        }}
+      >
+        <div className={classes.main} id='dao'>
+          <div className={classes.dao} style={{
+              transform: this.state.visibility ? 'translate(0%)' : 'translate(-150%)',
+              transition: 'transform 1000ms ease-in-out',
+          }}>
+            <img
+              className={classes.daoImage}
+              src={`${process.env.PUBLIC_URL}/img/peaceDAO.png`}
+              alt={'Dao Icon'}
+            />
+            <div className={classes.daoRight}>
+              <h1> Peace DAO </h1>
+               <p>
+                    Peace DAO is on track to be the first philanthropic DAO that utilizes NFT artwork to help make the world a better place. It will create a community of like-minded individuals that will collaborate to conduct future fundraising projects.
+              </p>
+              <div style={{"marginBottom": "10px"}}> </div>
+              <p>
+                  Owning a PeaceFrog will grant you a vote on future projects proposed by the Peace DAO. This DAO will have a communal wallet used to fund future projects around the world. To kickstart this community, all the income generated from royalties post-mint will be directed to the DAOs wallet.
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
+      </VisibilitySensor>
     );
   }
 }

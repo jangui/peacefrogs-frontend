@@ -166,7 +166,7 @@ class Navbar extends Component {
           <div className={classes.navLeft}>
             <img
               className={classes.logoStyle}
-              src={process.env.PUBLIC_URL + '/img/hand.jpg'}
+              src={process.env.PUBLIC_URL + '/img/logo.png'}
               alt="Logo"
             />
           </div>
