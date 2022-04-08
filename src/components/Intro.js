@@ -7,8 +7,6 @@ const styles = theme => ({
     'display': 'flex',
     'flex-direction': 'column',
     'align-items': 'center',
-    'margin-top': '20vh',
-    'margin-bottom': '20vh',
   },
   introImage: {
     'margin-bottom': '5px',

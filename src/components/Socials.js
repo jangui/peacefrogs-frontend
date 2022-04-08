@@ -7,8 +7,6 @@ const styles = theme => ({
     'flex-direction': 'column',
     'align-items': 'center',
     'text-align': 'center',
-    'margin-top': '15vh',
-    'margin-bottom': '20vh',
   },
   socialsRow: {
     'display': 'flex',
@@ -21,7 +19,7 @@ const styles = theme => ({
   },
   socialsIcon: {
     'height': 'auto',
-    'width': 'clamp(50px, 10vw, 200px)',
+    'width': 'clamp(50px, 10vw, 100px)',
   },
 });
 

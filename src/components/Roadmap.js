@@ -9,8 +9,6 @@ const styles = theme => ({
     'align-items': 'center',
     'justify-content': 'center',
     'width': 'clamp(200px, 90%, 1100px)',
-    'margin-top': '15vh',
-    'margin-bottom': '15vh',
   },
   roadmapImage: {
     'height': 'auto',

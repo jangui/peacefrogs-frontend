@@ -7,8 +7,6 @@ const styles = theme => ({
     'display': 'flex',
     'align-items': 'center',
     'justify-content': 'center',
-    'margin-top': '15vh',
-    'margin-bottom': '15vh',
   },
   dao: {
     'display': 'flex',
@@ -47,16 +45,20 @@ class Dao extends Component {
         }}
       >
         <div className={classes.main} id='dao'>
-          <div className={classes.dao} style={{
-              transform: this.state.visibility ? 'translate(0%)' : 'translate(-150%)',
-              transition: 'transform 1000ms ease-in-out',
-          }}>
+          <div className={classes.dao}>
             <img
               className={classes.daoImage}
               src={`${process.env.PUBLIC_URL}/img/peaceDAO.png`}
               alt={'Dao Icon'}
+              style={{
+                transform: this.state.visibility ? 'translate(0%)' : 'translate(-150%)',
+                transition: 'transform 700ms ease-out',
+              }}
             />
-            <div className={classes.daoRight}>
+            <div className={classes.daoRight} style={{
+                transform: this.state.visibility ? 'translate(0%)' : 'translate(150%)',
+                transition: 'transform 700ms ease-out',
+            }}>
               <h1> Peace DAO </h1>
                <p>
                     Peace DAO is on track to be the first philanthropic DAO that utilizes NFT artwork to help make the world a better place. It will create a community of like-minded individuals that will collaborate to conduct future fundraising projects.

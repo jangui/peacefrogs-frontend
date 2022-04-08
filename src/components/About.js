@@ -7,8 +7,6 @@ const styles = theme => ({
     'display': 'flex',
     'align-items': 'center',
     'justify-content': 'center',
-    'margin-top': '15vh',
-    'margin-bottom': '15vh',
   },
   about: {
     'display': 'flex',
@@ -45,11 +43,11 @@ class About extends Component {
         }}
       >
         <div className={classes.main} id='about'>
-          <div className={classes.about} style={{
-              transform: this.state.visibility ? 'translate(0%)' : 'translate(150%)',
-              transition: 'transform 1000ms ease-in-out',
-          }}>
-            <div className={classes.aboutLeft}>
+          <div className={classes.about}>
+            <div className={classes.aboutLeft} style={{
+              transform: this.state.visibility ? 'translate(0%)' : 'translate(-250%)',
+              transition: 'transform 700ms ease-out',
+            }}>
                 <h1> About </h1>
                 <p> The mission of this project is to create a large-scale fundraiser to <a href="https://mobile.twitter.com/search?q=%23HelpUkrain">#HelpUkraine</a>.
                 </p>
@@ -63,6 +61,10 @@ class About extends Component {
               className={classes.aboutImage}
               src={process.env.PUBLIC_URL + '/img/about.png'}
               alt="About Banner"
+              style={{
+                transform: this.state.visibility ? 'translate(0%)' : 'translate(150%)',
+                transition: 'transform 700ms ease-out',
+              }}
             />
           </div>
         </div>

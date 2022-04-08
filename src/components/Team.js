@@ -7,8 +7,6 @@ const styles = theme => ({
   team: {
     'display': 'flex',
     'flex-direction': 'column',
-    'margin-top': '15vh',
-    'margin-bottom': '15vh',
     'flex-wrap': 'wrap',
     'width': 'clamp(200px, 90%, 1100px)',
     'justify-content': 'center',
