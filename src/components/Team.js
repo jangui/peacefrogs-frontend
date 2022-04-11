@@ -47,19 +47,19 @@ class Team extends Component {
             <TeamMember
               img='/img/alex.png'
               name='Alex'
-              description='Team Manager. Entrepaneur. NFT Enthusiast. Balls to the wall.'
+              description='Team Manager. NFT Guru.'
             />
 
             <TeamMember
               img='/img/jon.png'
               name='Jon'
-              description='Artist. Graphic Design Wizard. Frog lover by day, peace maker by night.'
+              description='Artist. Design Wizard.'
             />
 
             <TeamMember
               img='/img/jaime.png'
               name='Jaime'
-              description='Code Monkey. Tech Overlord.'
+              description='Developer. Tech Overlord.'
             />
 
           </div>

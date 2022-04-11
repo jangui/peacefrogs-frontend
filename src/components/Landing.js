@@ -24,19 +24,19 @@ class Landing extends Component {
     const { classes }  = this.props;
     let content =
       <div className={classes.mainColumn}>
-        <div style={{margin: '10vh'}}></div>
+        <div style={{margin: 'clamp(20px, 3vw, 100px)'}}></div>
         <Intro />
-        <div style={{margin: '25vh'}}></div>
+        <div style={{margin: 'clamp(150px, 20vw, 300px)'}}></div>
         <About />
-        <div style={{margin: '25vh'}}></div>
+        <div style={{margin: 'clamp(150px, 20vw, 300px)'}}></div>
         <Dao />
-        <div style={{margin: '25vh'}}></div>
+        <div style={{margin: 'clamp(150px, 20vw, 300px)'}}></div>
         <Team />
-        <div style={{margin: '20vh'}}></div>
+        <div style={{margin: 'clamp(150px, 20vw, 300px)'}}></div>
         <Roadmap />
-        <div style={{margin: '15vh'}}></div>
-        <Socials />
-        <div style={{margin: '10vh'}}></div>
+        <div style={{margin: 'clamp(150px, 15vw, 300px)'}}></div>
+        <Mint />
+        <div style={{margin: 'clamp(50px, 10vw, 150px)'}}></div>
       </div>
 
     return <Page content={content} />;

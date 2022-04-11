@@ -15,6 +15,30 @@ const styles = theme => ({
     'margin': 'clamp(5px, 1vw, 25px) 20px 0px clamp(15px, 1vw, 20px)',
   },
 
+  navLarge: {
+    'display': 'flex',
+    'justify-content': 'space-evenly',
+    'align-items': 'center',
+    'margin-top': 'clamp(15px, 2vw, 50px)',
+  },
+
+  navImage: {
+    'height': 'auto',
+    'width': 'clamp(25px, 4.0vw, 60px)',
+    'filter': 'grayscale(100%)',
+    'transition': 'all 0.5s ease-in-out 0s',
+    '&:hover': {
+      'filter': 'grayscale(0)',
+    },
+  },
+
+  navSmall: {
+    'display': 'flex',
+    'justify-content': 'space-between',
+    'align-items': 'center',
+    'margin': 'clamp(5px, 1vw, 25px) 20px 0px clamp(15px, 1vw, 20px)',
+  },
+
   logoStyle: {
     'margin-top': '5px',
     'width': 'clamp(40px, 10vw, 70px)',
@@ -26,6 +50,7 @@ const styles = theme => ({
     'align-items': 'center',
     'margin': '5px 35px 0px clamp(5px, 2vw, 40px)',
   },
+
   navSpacer: {
     'width': 'clamp(200px, 60vw, 1000px)'
   },
@@ -117,51 +142,49 @@ class Navbar extends Component {
   render() {
     const { classes } = this.props;
 
-    let rightContent =
-      <div className={classes.navRightItems}>
-        <button
-          className={classes.navButton}
-          onClick={() => this.scrollTo('about')}>
-          About
-        </button>
-
-        <button
-          className={classes.navButton}
-          onClick={() => this.scrollTo('dao')}>
-          DAO
-        </button>
-
-        <button
-          className={classes.navButton}
-          onClick={() => this.scrollTo('roadmap')}>
-          Roadmap
-        </button>
-
-        <button
-          className={classes.navMintButton}
-          onClick={() => this.scrollTo('mint')}>
-          Mint
-        </button>
+    // nav content for large screens
+    let navContent =
+      <div className={classes.navLarge}>
+        <a href="https://peacefrogs.io">
+          <img
+            className={classes.navImage}
+            src={process.env.PUBLIC_URL + '/img/logo.png'}
+            alt="Logo"
+          />
+        </a>
+        <a href="https://twitter.com/peace_frogs">
+          <img
+            className={classes.navImage}
+            src={process.env.PUBLIC_URL + '/img/socials/twitter2.png'}
+            alt="Twitter Logo"
+          />
+        </a>
+        <a href="https://discord.gg/XdRkpaWZwE">
+          <img
+            className={classes.navImage}
+            src={process.env.PUBLIC_URL + '/img/socials/discord.png'}
+            alt="Discord Logo"
+          />
+        </a>
+        <a href="https://instagram.com/peacefrogs_nft">
+          <img
+            className={classes.navImage}
+            src={process.env.PUBLIC_URL + '/img/socials/instagram.webp'}
+            alt="Instagram Logo"
+          />
+        </a>
+        <a href="https://redcross.org">
+          <img
+            className={classes.navImage}
+            src={process.env.PUBLIC_URL + '/img/redcross.png'}
+            alt="RedCross Logo"
+          />
+        </a>
       </div>
 
-    // display hambuger if screen is small
+    // nav context for small screens
     if (this.state.size === "small") {
-      rightContent =
-        <>
-          <div className={classes.hamburger}>
-            <Hamburger
-              size={25}
-              color='rgb(24, 33, 109)'
-              easing="ease-in"
-              onToggle={this.props.burgerClickHandler}
-            />
-          </div>
-        </>
-    }
-
-
-    return (
-      <nav className={classes.navStyle}>
+      navContent =
         <div className={classes.navFlex}>
           <div className={classes.navLeft}>
             <img
@@ -172,9 +195,21 @@ class Navbar extends Component {
           </div>
           <div className={classes.navSpacer}></div>
           <div className={classes.navRight}>
-            {rightContent}
+            <div className={classes.hamburger}>
+              <Hamburger
+                size={25}
+                color='rgb(24, 33, 109)'
+                easing="ease-in"
+                onToggle={this.props.burgerClickHandler}
+              />
+            </div>
           </div>
         </div>
+    }
+
+    return (
+      <nav className={classes.navStyle}>
+        {navContent}
       </nav>
     );
   }

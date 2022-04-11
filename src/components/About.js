@@ -24,7 +24,7 @@ const styles = theme => ({
   },
   aboutImage: {
     'height': 'auto',
-    'width': 'clamp(370px, 55%, 650px)',
+    'width': 'clamp(370px, 45%, 650px)',
   },
 });
 
