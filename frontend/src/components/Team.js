@@ -45,15 +45,15 @@ class Team extends Component {
           <div className={classes.teamMembers}>
 
             <TeamMember
-              img='/img/alex.png'
-              name='Alex'
-              description='Team Manager. NFT Guru.'
-            />
-
-            <TeamMember
               img='/img/jon.png'
               name='Jon'
               description='Artist. Design Wizard.'
+            />
+
+            <TeamMember
+              img='/img/alex.png'
+              name='Alex'
+              description='Team Manager. NFT Guru.'
             />
 
             <TeamMember

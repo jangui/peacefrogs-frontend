@@ -12,7 +12,7 @@ const styles = theme => ({
   },
   roadmapImage: {
     'height': 'auto',
-    'width': 'clamp(200px, 100%, 1100px)',
+    'width': 'clamp(200px, 100%, 800px)',
   },
 });
 

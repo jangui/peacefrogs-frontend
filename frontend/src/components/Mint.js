@@ -70,7 +70,7 @@ class Mint extends Component {
             opacity: this.state.visibility ? 1 : 0,
             transition: 'opacity 1500ms ease-in-out',
         }}>
-          <a href="https://opensea.io/">
+          <a href="https://mint.peacefrogs.io/">
             <img
               className={classes.mintImage}
               src={process.env.PUBLIC_URL + '/img/mint.png'}

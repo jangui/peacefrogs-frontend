@@ -7,7 +7,6 @@ import Dao from './Dao';
 import Team from './Team';
 import Roadmap from './Roadmap';
 import Mint from './Mint';
-import Socials from './Socials';
 
 const styles = theme => ({
   mainColumn: {
